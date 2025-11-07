@@ -1,33 +1,335 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josip Samardzic - Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Programmer & Developer</p>
-    </header>
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#2A7A9E;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#00B8D4;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#1D546C;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
     
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here.</p>
-    </section>
+    <div id="canvas-container"></div>
     
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of your project.</p>
-            <a href="https://github.com/yourusername/project1">View Code</a>
+    <div class="floating-particles"></div>
+
+    <div class="content-wrapper">
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <header>
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>Josip Samardzic</h1>
+                        <p class="subtitle">Software Engineer | Backend & Blockchain Developer</p>
+                        <div class="header-badges">
+                            <span class="badge">C/C++</span>
+                            <span class="badge">Blockchain</span>
+                            <span class="badge">Solidity</span>
+                        </div>
+                    </div>
+                    <div class="header-animation">
+                        <div class="code-window">
+                            <div class="code-window-header">
+                                <div class="code-window-controls">
+                                    <span class="control-dot red"></span>
+                                    <span class="control-dot yellow"></span>
+                                    <span class="control-dot green"></span>
+                                </div>
+                                <div class="code-window-title">main.cpp</div>
+                            </div>
+                            <div class="code-window-body">
+                                <div class="code-lines">
+                                    <div class="code-line">
+                                        <span class="line-number">1</span>
+                                        <span class="code-content"><span class="keyword">void*</span> <span class="function">handle_request</span>(<span class="keyword">void*</span> arg) {</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="line-number">2</span>
+                                        <span class="code-content">    <span class="keyword">int</span> client_fd = *(<span class="type">int*</span>)arg;</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="line-number">3</span>
+                                        <span class="code-content">    <span class="keyword">char</span> buffer[<span class="number">1024</span>];</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="line-number">4</span>
+                                        <span class="code-content">    <span class="function">epoll_wait</span>(epfd, events, MAX, -<span class="number">1</span>);</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="line-number">5</span>
+                                        <span class="code-content">    <span class="keyword">return</span> <span class="constant">NULL</span>;</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="line-number">6</span>
+                                        <span class="code-content">}</span>
+                                    </div>
+                                    <div class="code-line typing">
+                                        <span class="line-number">7</span>
+                                        <span class="code-content"><span class="typing-text"></span><span class="cursor">█</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm a Software Engineering student completing the core curriculum at 42 Heilbronn. I look for collaborative, learning-focused teams where I can build both technical expertise and communication skills. My biggest interest is software development and blockchain development, but I'm also excited to learn anything related to computer science.</p>
+                        
+                        <p>I'm ready to contribute from day one and gain real world experience to help me become a good software engineer. My experience ranges from building decentralized applications with Solidity and Hardhat to developing high-performance systems in C++.</p>
+                    </div>
+
+                    <div class="skills-visualization">
+                        <h3>Core Technologies</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="95">
+                                <div class="skill-circle">
+                                    <svg class="skill-ring" viewBox="0 0 100 100">
+                                        <circle class="skill-ring-bg" cx="50" cy="50" r="45"></circle>
+                                        <circle class="skill-ring-progress" cx="50" cy="50" r="45"></circle>
+                                    </svg>
+                                    <div class="skill-percentage">95%</div>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">C/C++</span>
+                                    <span class="skill-level">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-circle">
+                                    <svg class="skill-ring" viewBox="0 0 100 100">
+                                        <circle class="skill-ring-bg" cx="50" cy="50" r="45"></circle>
+                                        <circle class="skill-ring-progress" cx="50" cy="50" r="45"></circle>
+                                    </svg>
+                                    <div class="skill-percentage">85%</div>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Solidity</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="80">
+                                <div class="skill-circle">
+                                    <svg class="skill-ring" viewBox="0 0 100 100">
+                                        <circle class="skill-ring-bg" cx="50" cy="50" r="45"></circle>
+                                        <circle class="skill-ring-progress" cx="50" cy="50" r="45"></circle>
+                                    </svg>
+                                    <div class="skill-percentage">80%</div>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Blockchain</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="75">
+                                <div class="skill-circle">
+                                    <svg class="skill-ring" viewBox="0 0 100 100">
+                                        <circle class="skill-ring-bg" cx="50" cy="50" r="45"></circle>
+                                        <circle class="skill-ring-progress" cx="50" cy="50" r="45"></circle>
+                                    </svg>
+                                    <div class="skill-percentage">75%</div>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Docker</span>
+                                    <span class="skill-level">Proficient</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-tags">
+                        <h3>Tools & Technologies</h3>
+                        <div class="tags-container">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Hardhat</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>42 Heilbronn</h3>
+                    <div class="degree">Software Engineering Program</div>
+                    <div class="location">Heilbronn, Germany</div>
+                    <div class="year">2024 - 2025</div>
+                    <a href="https://www.42heilbronn.de" target="_blank" class="education-button">Visit 42 Heilbronn</a>
+                    <a href="https://www.42network.org/" target="_blank" class="education-button">Visit 42 Network</a>
+                </div>
+                <div class="education-item">
+                    <h3>ZIRS učilište</h3>
+                    <div class="degree">Certificate in Object-Oriented Programming</div>
+                    <div class="location">Zagreb, Croatia</div>
+                    <div class="year">2023</div>
+                </div>
+                <div class="education-item">
+                    <h3>Architectural-Geodetic School Osijek</h3>
+                    <div class="degree">High School Diploma</div>
+                    <div class="location">Osijek, Croatia</div>
+                    <div class="year">2015 - 2019</div>
+                </div>
+            </section>
+
+            <section id="certifications">
+                <h2>Certifications</h2>
+                <div class="education-item">
+                    <h3>Erasmus Plus Youthpass Certificate</h3>
+                    <div class="degree">Training on Facilitation skills</div>
+                    <div class="year">2023</div>
+                </div>
+                <div class="education-item">
+                    <h3>University Computing Center Srce</h3>
+                    <div class="degree">Basics of HTML, CSS, JavaScript</div>
+                    <div class="year">2022</div>
+                </div>
+            </section>
+            
+            <section id="projects">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/cub.gif" alt="Cub3D">
+                        </div>
+                        <div class="project-card-content">
+                            <h3>Cub3D</h3>
+                            <p>Creating 3D game engine using MiniLibX library and raycasting making a dynamic view inside a 3D maze in the style of the famous Wolfenstein 3D game, the first true FPS in video game history.</p>
+                            <a href="https://github.com/Josip2504/cub3d" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/irs.gif" alt="IRC Server in C++">
+                        </div>
+                        <div class="project-card-content">
+                            <h3>IRC Server in C++</h3>
+                            <p>Built an IRC server in C++ using non-blocking I/O. Supported multiple clients, real-time messaging, and core IRC features like channels, operators, and private messages.</p>
+                            <a href="https://github.com/Josip2504/irc" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/pus.bin" alt="push_swap">
+                        </div>
+                        <div class="project-card-content">
+                            <h3>push_swap</h3>
+                            <p>A high-performance stack sorting algorithm using limited operations. Developed as part of the 42 School curriculum. This sorting algorithm challenge sorts a stack of integers using a limited set of instructions with the fewest moves possible, requiring efficient algorithms in C and understanding algorithmic complexity and optimization.</p>
+                            <a href="https://github.com/Josip2504/push_swap" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/min.png" alt="Minishell">
+                        </div>
+                        <div class="project-card-content">
+                            <h3>Minishell</h3>
+                            <p>A custom Unix shell implementation inspired by Bash, developed as part of the 42 School curriculum. Minishell provides a command-line interface with support for executing commands, managing environment variables, handling pipes, redirections, and built-in commands.</p>
+                            <a href="https://github.com/Josip2504/minishell" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/dapp.png" alt="Crowdfunding dApp">
+                        </div>
+                        <div class="project-card-content">
+                            <h3>Crowdfunding dApp</h3>
+                            <p>Built a decentralized crowdfunding application using Solidity for smart contracts and Hardhat for deployment. Users can create and contribute to campaigns securely on the blockchain. Integrated wallet connection, campaign management, and real-time funding updates.</p>
+                            <a href="https://github.com/Josip2504/Crowdfunding_dApp" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/inc.jpg" alt="Debian-Based Dockerized Web Infrastructure">
+                        </div>
+                        <div class="project-card-content">
+                            <h3>Debian-Based Dockerized Web Infrastructure</h3>
+                            <p>A fully operational LEMP stack (Linux-Nginx-MariaDB-PHP) virtualized with Docker, featuring TLS-secured WordPress deployment. Built on Debian (penultimate stable) with auto-recovery, volumes, and isolated networking.</p>
+                            <a href="https://github.com/Josip2504/inception_42" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/pic.png" alt="so_long">
+                        </div>
+                        <div class="project-card-content">
+                            <h3>so_long</h3>
+                            <p>A 42 school project to create a simple 2D game built using MiniLibX, a lightweight graphical library. This project focuses on fundamental computer graphics concepts such as window management, textures, sprites, event handling, and basic game mechanics. It serves as a practical exercise in C programming, improving problem-solving skills while working with graphical elements.</p>
+                            <a href="https://github.com/Josip2504/so_long" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Location:</strong>
+                        <span>Osijek, Croatia</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+385917226977">+385 91 722 6977</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:josip.samardzic2@gmail.com">josip.samardzic2@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong>
+                        <a href="www.linkedin.com/in/josip-samardzic" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/Josip2504" target="_blank">GitHub Profile</a>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com</p>
-        <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
-    </section>
+    </div>
+
+    <script src="scripts/three-background.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
